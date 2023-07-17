@@ -1,0 +1,110 @@
+body {
+  background-image: url(./shutterstock_752274157-1024x675\ \(1\).jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-top: auto;
+  background-color: white;
+}
+
+#menuToggle {
+  opacity: 0;
+}
+#menuToggle:checked + .menuButton > span {
+  transform: rotate(45deg);
+}
+#menuToggle:checked + .menuButton > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menuToggle:checked + .menuButton > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menuToggle:checked ~ .menuBox {
+  left: 0;
+}
+.menuButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.menuButton > span,
+.menuButton > span::before,
+.menuButton > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #131212;
+  transition-duration: 0.2s;
+}
+.recipeContainer {
+  background-color: white;
+}
+
+.menuButton > span::before {
+  content: "";
+  top: -10px;
+}
+.menuButton > span::after {
+  content: "";
+  top: 10px;
+}
+
+.menuBox {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100vh;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: rgb(26, 24, 24, 0.5);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  transition-duration: 0.3s;
+}
+.breakfastItem {
+  display: block;
+  padding: 12px 24px;
+  color: #fef7f6;
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+
+.recipeImage {
+  max-width: 350px;
+  max-height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.recipeDescription {
+  margin: auto;
+}
+
+.recipeBox {
+  display: flex;
+  flex-flow: column wrap;
+  flex-grow: 5;
+  align-content: center;
+}
+
+.recipeIngredients {
+  width: 30%;
+  margin-left: 38%;
+}
